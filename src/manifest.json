@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "InSightHub",
+    "version": "1.0",
+    "description": "Your AI-powered knowledge navigator and productivity companion.",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "background": {
+      "service_worker": "background/background.js"
+    },
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "16": "public/icons/icon16.png",
+        "48": "public/icons/icon48.png",
+        "128": "public/icons/icon128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content_scripts/contentScript.js"]
+      }
+    ]
+  }
+  
