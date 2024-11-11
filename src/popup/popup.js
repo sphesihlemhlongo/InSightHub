@@ -1,5 +1,6 @@
+import { getSummary } from '../services/summarizationService.js';
+
 document.getElementById("fetchSummary").addEventListener("click", async () => {
-    document.getElementById("output").textContent = "Fetching summary...";
-    // Placeholder for API call to Summarization Service
-  });
-  
+  const result = await getSummary("Sample text for summarization");
+  document.getElementById("output").textContent = result || "Summary fetched!";
+});
