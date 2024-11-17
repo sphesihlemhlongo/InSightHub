@@ -1,6 +1,12 @@
-import { getSummary } from '../services/summarizationService.js';
+import SummarizationService from "../services/summarizationService.js";
 
-document.getElementById("fetchSummary").addEventListener("click", async () => {
-  const result = await getSummary("Sample text for summarization");
-  document.getElementById("output").textContent = result || "Summary fetched!";
+document.addEventListener("DOMContentLoaded", () => {
+  const summarizeBtn = document.getElementById("summarize-btn");
+  const resultContainer = document.getElementById("result");
+
+  summarizeBtn.addEventListener("click", async () => {
+    const selectedText = "This is a sample text to summarize."; // Replace with real input
+    const summary = await SummarizationService.summarizeText(selectedText);
+    resultContainer.textContent = summary || "Failed to summarize text.";
+  });
 });
