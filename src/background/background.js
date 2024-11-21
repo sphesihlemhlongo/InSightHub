@@ -2,7 +2,7 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
         id: "summarizeText",
         title: "Summarize Selected Text",
-        contects: ["selection"]
+        contexts: ["selection"]
     })
 });
 
