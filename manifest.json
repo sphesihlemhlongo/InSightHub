@@ -3,7 +3,12 @@
     "name": "InSightHub",
     "version": "1.0",
     "description": "Your AI-powered knowledge navigator and productivity companion.",
-    "permissions": ["activeTab", "scripting", "storage"],
+    "permissions": ["activeTab", "scripting", "contextMenus", "storage"],
+    "host_permissions": ["<all_urls>", "*://*/*"],
+    "background": {
+    "service_worker": "src/background/background.js",
+    "type" : "module"
+  },
     
     "action": {
       "default_popup": "src/popup/popup.html",
